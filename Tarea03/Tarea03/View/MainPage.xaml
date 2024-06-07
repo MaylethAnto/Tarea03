@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Tarea03"
+             x:Class="Tarea03.MainPage"
+             Title="MainPage">
+
+    <StackLayout>
+        <StackLayout>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+                <Label Margin="0,0,0,10" Text="Tarea 03" FontAttributes="Bold" FontSize="Large" TextColor="Gray" HorizontalTextAlignment="Center" ></Label>
+                <Entry x:Name="txtPersonId" Placeholder="Nombre"></Entry>
+                <Entry x:Name="txtName" Placeholder="Apellido"></Entry>
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <ImageButton x:Name="btnAdd" WidthRequest="200" HeightRequest="60" Source="{local:ImageResource Tarea03.img.Agregar.png}" Clicked="BtnAdd_Clicked" />
+                    <ImageButton x:Name="btnRead" WidthRequest="200" HeightRequest="60" Source="{local:ImageResource Tarea03.img.Listar.png}" Clicked="BtnRead_Clicked"/>
+                </StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <ImageButton x:Name="btnUpdate" WidthRequest="200" HeightRequest="60" Source="{local:ImageResource Tarea03.img.Actualizar.png}" Clicked="BtnUpdate_Clicked" />
+                    <ImageButton x:Name="btnDelete" WidthRequest="200" HeightRequest="60" Source="{local:ImageResource Tarea03.img.Eliminar.png}" Clicked="BtnDelete_Clicked" />
+                </StackLayout>
+                <ListView x:Name="lstPersons">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Vertical" Padding="10">
+                                    <Label Text="{Binding Nombre}" />
+                                    <Label Text="{Binding Apellido}" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>  
